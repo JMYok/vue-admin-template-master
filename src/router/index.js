@@ -41,8 +41,8 @@ export const constantRouterMap = [
     path: '/hospSet',
     component: Layout,
     redirect: '/hospSet/list',
-    name: '医院设置管理',
-    meta: { title: '医院设置管理', icon: 'example' },
+    name: '医院管理',
+    meta: { title: '医院管理', icon: 'example' },
     children: [
       {
         path: 'list',
@@ -62,7 +62,13 @@ export const constantRouterMap = [
         component: () => import('@/views/hospSet/add'),
         meta: { title: '医院设置编辑', noCache:true },
         hidden: true //添加隐藏路由
-      }
+      },
+      {
+        path: 'hosp/list',
+        name: '医院列表',
+        component: () => import('@/views/hosp/list'),
+        meta: { title: '医院列表', icon: 'table' }
+      },
     ]
   },
 
